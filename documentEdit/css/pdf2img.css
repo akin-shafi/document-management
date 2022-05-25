@@ -1,0 +1,23 @@
+ #holder{
+    width: 750px;
+    position: relative;
+}
+
+canvas {
+    /*margin-top: 20px;*/
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    margin-bottom: 24px;
+    background: #FFF;
+}
+.pageNum{
+    text-align: right;
+    font-weight: bold;
+    margin-top: 12px;
+}
+.watermark{
+    background: #FFF;
+    font-weight: bold;
+    margin-top: -44px;
+    /*text-align: right;*/
+    font-size: 12px;
+}

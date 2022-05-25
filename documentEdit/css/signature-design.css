@@ -1,0 +1,74 @@
+
+	.bg-primary{
+		background-color: royalblue;
+		padding: 30px;
+	}
+	.css-pl8xw2 {
+	    background: none;
+	    border: none;
+	    font-size: 11px;
+	    font-weight: bold;
+	    /*line-height: 11px;*/
+	    min-width: 140px;
+	    padding: 0px 0px 0px 25px;
+	    position: relative;
+	    text-align: left;
+	    color: rgb(0, 0, 0);
+	}
+	.css-pl8xw2::before {
+    border-color: rgb(0, 0, 0);
+	}
+	/*.form-check-label{
+		border-bottom: 2px solid rgb(0, 92, 185);
+	    border-left: 2px solid rgb(0, 92, 185);
+	    border-radius: 5px 0px 0px 5px;
+	    border-top: 2px solid rgb(0, 92, 185);
+	}*/
+	/*.css-pl8xw2::before {
+	    border-bottom: 2px solid rgb(0, 92, 185);
+	    border-left: 2px solid rgb(0, 92, 185);
+	    border-radius: 5px 0px 0px 5px;
+	    border-top: 2px solid rgb(0, 92, 185);
+	    content: "";
+	    display: block;
+	    height: 50px;
+	    left: 0px;
+	    position: absolute;
+	    top: 4px;
+	    width: 20px;
+	}*/
+	.css-fv3lde {
+	    -webkit-box-align: center;
+	    align-items: center;
+	    display: flex;
+	}
+	.css-4x8v88 {
+	    display: block;
+	    font-size: 18px;
+	    font-weight: normal;
+	    line-height: 26px;
+	    margin: 5px 0px 5px -8px;
+	    min-height: 26px;
+	    font-family: 'Arizonia';
+	}
+	.css-1j983t3 {
+	    display: block;
+	    max-width: 114px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+	.char1 {
+	  -webkit-transform: rotate(6deg);
+	  -moz-transform: rotate(6deg);
+	  -ms-transform: rotate(6deg);
+	  -o-transform: rotate(6deg);
+	  transform: rotate(6deg);
+	}
+	.char2 {
+	  -webkit-transform: rotate(12deg);
+	  -moz-transform: rotate(12deg);
+	  -ms-transform: rotate(12deg);
+	  -o-transform: rotate(12deg);
+	  transform: rotate(12deg);
+	}

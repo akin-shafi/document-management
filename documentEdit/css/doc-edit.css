@@ -1,0 +1,173 @@
+.signTool,
+.initialTool,
+.stampTool,
+.dateTool,
+.sealTool, .textTool {
+  display: none;
+}
+
+.textareaTool{
+    font-family: 'Poppins, Mono&quot, Monaco, monospace'; 
+    letter-spacing: 0.14px; 
+    text-align: left; 
+    font-size: 11.52px !important; 
+    width: 200px; 
+    /*height: 14px;*/
+    /*background: rgb(255, 255, 255, 0.9) !important;*/
+}
+
+#holder,
+.box {
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  padding: 8px 20px 8px 20px;
+  text-align: center;
+  font-weight: 500;
+
+  border: 2px solid #003bb3;
+  background: rgb(110, 138, 244, 0.12) !important;
+  color: #003bb3 !important;
+}
+
+.textBox {
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  padding: 8px 20px 8px 20px;
+  text-align: center;
+  font-weight: 500;
+  border: 2px solid #003bb3;
+  background: rgb(110, 138, 244, 0.12) !important;
+  color: #003bb3 !important;
+}
+
+.deleteItem {
+  border-radius: 50%;
+  padding: 0.5em;
+  border: 2px dotted #000;
+  background-color: #fff;
+  color: #fff !important;
+  position: absolute;
+  top: -15;
+  right: -15;
+}
+.deleteItem:hover {
+  cursor: pointer;
+  border: 2px solid #ea5455;
+  background-color: #fff;
+  color: #ffffff;
+}
+
+./*deleteText {
+    border-radius: 50%;
+    padding: 0.5em;
+    border: 2px dotted #000;
+    background-color: #fff;
+    color: #fff !important;
+    position: relative;
+    margin-top: -23;
+    margin-right: -140;
+}*/
+
+
+.css-1odrc8r {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  flex: 1 1 auto;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  background-attachment: local, local, scroll, scroll;
+  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+      rgb(255, 255, 255) 30%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%),
+    linear-gradient(rgb(233, 233, 233), rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(255, 255, 255, 0), rgb(233, 233, 233));
+  background-position: 0px 0px, 0px 100%, 0px 0px, 0px 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 12px, 100% 12px, 100% 4px, 100% 4px;
+  overflow-y: auto;
+  padding: 0px;
+}
+.signature-input-wrapper {
+  padding: 16px 0px;
+  border-bottom: solid 1px #e9e9e9;
+}
+@media (min-width: 768px) {
+  .input-layout {
+    flex-direction: row;
+  }
+}
+
+.input-layout {
+  flex-direction: row;
+}
+
+
+.tool li{
+    /*color: #010714;
+    background: #fafafb;
+    border-color: #000;*/
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+    height: 35px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    border: 2px solid #7b7171;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    /*color: #7b7171;*/
+    /*background: #eae8e8;*/
+    width: 100%;
+    margin-bottom: 0.5rem;
+    /*min-width: 165px;*/
+    position: relative;
+}
+.tool li{
+    color: #003bb3;
+    background: #e6eeff;
+    border-color: #003bb3;
+}
+
+.tool li:hover{
+    cursor: pointer;
+    /*color: #003bb3;
+    background: #e6eeff;
+    border-color: #003bb3;*/
+
+
+    color: #010714;
+    background: #fafafb;
+    border-color: #000;
+}
+
+
+/* FOR ANYTHING GREATER THAN MOBILE RESOLUTION */
+/*@media screen and (min-width: 480px) {
+  .tool li {
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+  }
+}
+
+.tool li:hover {
+  background-color: #ccc;
+}*/
+/* FOR MOBILE RESOLUTIONS */
+@media screen and (max-width: 768px) {
+  .tool li {
+    display: inline-block !important;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+}
