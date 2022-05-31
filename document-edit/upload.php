@@ -31,9 +31,8 @@ if (!file_exists('upload')) {
   mkdir('upload', 0777);
 }
 
-// $document_id = $_SESSION['document_id'] ?? '';
+
 $document_id = 'ToNote'. '_' .uniqid() ?? '';
-// $document = Document::find_by_id($document_id);
 if (!empty($_FILES['file']['name'])) {
 
   foreach ($_FILES['file']['name'] as $key => $val) {
@@ -46,25 +45,6 @@ if (!empty($_FILES['file']['name'])) {
       if (is_array(getimagesize($pathname))) {
         $src = $pathname;
       }
-
-      // if(!empty($document)){
-      //     $args = [
-      //         'filename' => $filename,
-      //         'created_by' => $loggedInAdmin->id,                             
-      //         'created_at' => date('Y-m-d H:i:s'), 
-      //     ]; 
-      //     $document->merge_attributes($args);
-      //     $result = $document->save();
-      // }else{
-      //     $args = [
-      //         'filename' => $filename,
-      //         'document_id' => $document_id,
-      //         'created_by' => $loggedInAdmin->id,                             
-      //         'created_at' => date('Y-m-d H:i:s'), 
-      //     ];     
-      //     $document = new Document($args);
-      //     $result = $document->save();
-      // }
       $args = [
         'filename' => $filename,
         'document_id' => $document_id,
@@ -75,17 +55,19 @@ if (!empty($_FILES['file']['name'])) {
       $result = $document->save();
 ?>
 
-<div class="card mt-1 mb-0 shadow-none border">
+<div class="card mt-1 mb-0 shadow-none border w-25">
     <div class="p-2">
         <div class="row align-items-center">
+
             <div class="col-auto" id="uploadfile"><img data-dz-thumbnail src="<?php echo $src ?>"
                     class="avatar-sm rounded bg-light" alt=""> </div>
-            <div class="col ps-0"> <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>
-                <p class="mb-0" data-dz-size><?php echo $filename ?></p>
-            </div>
             <div class="col-auto"> <a href="" class="btn btn-sm btn-outline-primary ds-remove filed"
                     data-id="<?php echo $document->document_id ?>" data-name="<?php echo $filename ?>"> X </a>
             </div>
+            <div class="col ps-0"> <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>
+                <p class="mb-0" data-dz-size><?php echo $filename ?></p>
+            </div>
+
         </div>
     </div>
 </div>

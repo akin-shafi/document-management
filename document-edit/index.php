@@ -37,7 +37,7 @@ include(SHARED_PATH . '/header.php');
     text-align: center;
 }
 
-#drag_upload_file #selectfile {
+#drag_upload_file #selectFile {
     display: none;
 }
 
@@ -79,7 +79,7 @@ include(SHARED_PATH . '/header.php');
 
                 <div class="form-group mb-2">
                     <label>Give your Document a title</label>
-                    <input type="text" name="" class="form-control border-dark" required id=""
+                    <input type="text" name="title" class="form-control border-dark" required id="title"
                         placeholder="Enter document title">
                 </div>
                 <div id="drop_file_zone" class="upload-area d-flex align-items-center justify-content-center"
@@ -93,20 +93,21 @@ include(SHARED_PATH . '/header.php');
                                 onclick="file_explorer();" />
                         </div>
                         <div class="text-muted font-13 mt-3">PDF, PNG, JPG or JPEG only</div>
-                        <input type="file" id="selectfile" multiple />
+                        <input type="file" id="selectFile" multiple />
                     </div>
                 </div>
 
             </div>
         </div>
+        <div class="d-none" id="preview"></div>
         <div class="card mb-2 p-2">
             <div class="clearfix ">
-                <div class="btn btn-primary btn-sm float-end mr-2 disabled" style="cursor: pointer;" id="proceedbtn">
+                <div class="btn btn-primary btn-sm float-end mr-2 disabled" style="cursor: pointer;" id="proceedBtn">
                     <a href="" class="text-white" id="proceed">Proceed</a>
                 </div>
             </div>
         </div>
-        <div class="d-none" id="preview"></div>
+
     </form>
 </section>
 
@@ -130,21 +131,44 @@ $('#drop_file_zone').on('dragover', function(e) {
 
 function upload_file(e) {
     e.preventDefault();
-    ajax_file_upload(e.dataTransfer.files);
+    let title = $("#title").val()
+    if (title != "") {
+        ajax_file_upload(e.dataTransfer.files);
+
+    } else {
+        alert("Please enter Document title")
+        $("#title").addClass("border-danger").focus();
+    }
+
 }
 
 function file_explorer() {
-    document.getElementById('selectfile').click();
-    document.getElementById('selectfile').onchange = function() {
-        files = document.getElementById('selectfile').files;
-        ajax_file_upload(files);
-    };
+    let title = $("#title").val()
+    if (title != "") {
+        document.getElementById('selectFile').click();
+        document.getElementById('selectFile').onchange = function() {
+            files = document.getElementById('selectFile').files;
+            ajax_file_upload(files);
+
+        };
+    } else {
+        alert("Please enter Document title")
+        $("#title").addClass("border-danger").focus();
+    }
+
 }
+$(document).on('keyup', '#title', function() {
+    $("#title").removeClass("border-danger").addClass("border-primary");
+    files = document.getElementById('selectFile').files;
+    if (files != undefined) {
+        $("#proceedBtn").removeClass("disabled");
+    }
+})
 
 function ajax_file_upload(files_obj) {
     if (files_obj != undefined) {
         const baseURL = window.location.href;
-
+        var title = $('#title').val();
         var form_data = new FormData();
         for (i = 0; i < files_obj.length; i++) {
             form_data.append('file[]', files_obj[i]);
@@ -155,7 +179,9 @@ function ajax_file_upload(files_obj) {
             if (xhttp.status == 200) {
 
                 addThumbnail(this.responseText);
-                $("#proceedbtn").removeClass("disabled");
+                if (title != '') {
+                    $("#proceedBtn").removeClass("disabled");
+                }
 
                 let filed = document.querySelector('.filed')
                 let dataAttFileName = filed.getAttribute('data-name')
