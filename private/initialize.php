@@ -19,7 +19,11 @@
   // * Use same document root as webserver
   // * Can set a hardcoded value:
 
-  define("WWW_ROOT", '/document-management');
+  if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '192.168.64.2') {
+       define("WWW_ROOT", '/document-management');
+  }else{
+       define("WWW_ROOT", '/');
+  }
 
   // define("WWW_ROOT", '');
   // * Can dynamically find everything in URL up to "/public"

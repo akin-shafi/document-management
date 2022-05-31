@@ -6,16 +6,19 @@
 // 3. Unique credentials if working with multiple developers
 
 
-// define("DB_SERVER", "localhost");
-// define("DB_USER", "hoteliap_ambiance_user");
-// define("DB_PASS", "Akinshafi@91");
-// define("DB_NAME", "hoteliap_restaurant");
 
 
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "tonote_document_management");
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '192.168.64.2') {
+    define("DB_SERVER", "localhost");
+    define("DB_USER", "root");
+    define("DB_PASS", "");
+    define("DB_NAME", "tonote_document_management");
+}else{
+    define("DB_SERVER", "localhost");
+    define("DB_USER", "tonote_user");
+    define("DB_PASS", "@G3t2n0t3#");
+    define("DB_NAME", "document_management");
+}
 
 
 
