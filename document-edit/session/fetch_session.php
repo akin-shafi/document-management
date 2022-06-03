@@ -1,8 +1,8 @@
 <?php require_once('../../private/initialize.php');
 
 //fetch_cart.php
+// session_start();
 
-session_start();
 $document_id = $_POST['document_id'];
 // print_r($document_id);
 $documents = DocumentImage::find_by_document_ids($document_id);
@@ -11,7 +11,6 @@ $documents = DocumentImage::find_by_document_ids($document_id);
 $totalPage = count($documents);
 	
 $total_item = 0;
-	
 	
 	$output = '<div>';
 	if(!empty($_SESSION["docu_edit"])){
@@ -60,7 +59,7 @@ $total_item = 0;
 		$output .= '
 			
 			<div class="border">
-				<img src="upload/document_file/'.$value->filename.'" width="1000" class="img-fluid"> 
+				<img src="upload/document_file/'.$value->filename.'" style="min-width: 500px ;"  class="img-fluid"> 
 			</div>
 			<div class="clearfix">
 				<h6 class="float-end">Page '.$pageNum.' of '.$totalPage.'</h6>

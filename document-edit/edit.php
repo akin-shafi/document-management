@@ -36,6 +36,7 @@ include(SHARED_PATH . '/header.php');
     top: 100;
     bottom: 0;
     /*height: 50vh;*/
+    /* min-width: 310px; */
 }
 
 .sidebar-wrap {
@@ -43,26 +44,30 @@ include(SHARED_PATH . '/header.php');
 }
 </style>
 <!-- <div style="height: 10vh;"></div> -->
-<div class="container-fluid  ">
-    <div class="row  mb-1">
-
+<div class="container-fluid">
+    <div class="row my-2 d-lg-none">
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, facere asperiores! Blanditiis dolorem molestias voluptatibus excepturi, dolor veritatis quasi maiores.</h3>
     </div>
+
     <div class="row">
-        <div class="col-3  ">
+        <div class="col-lg-2 d-sm-none d-lg-block">
             <div class="d-flex justify-content-center">
-                <div class="sidebar-nav card px-2 pt-2">
-                    <div style="width: 210px; height: 100vh">
+                <div class="sidebar-nav card px-2 pt-2" style="width: 172px;">
+                    <div style="height: 100vh">
                         <div>Edit Tools
                             <hr>
                         </div>
                         <div class="border-bottom mb-1 pb-1">
                             <!-- <button type="button" class=""></button> -->
-                            <button type="button"
-                                class=" w-100 btn btn-relief-primary waves-effect waves-float waves-light"
-                                id="addSigner">
-                                <i data-feather='plus'></i>
-                                <span> Add Signer</span>
-                            </button>
+                            <div class="d-grid col-lg-12 col-md-12 mb-1 mb-lg-0">
+                                <button type="button"
+                                    class="btn btn-relief-primary waves-effect waves-float waves-light"
+                                    id="addSigner">
+                                    <i data-feather='plus'></i>
+                                    <span> Add Signer</span>
+                                </button>
+                            </div>
+                           
                         </div>
                         <div class="border-bottom mb-1 pb-1">
                             <select class="form-control select2 ">
@@ -71,7 +76,7 @@ include(SHARED_PATH . '/header.php');
                             </select>
                         </div>
                         <div class="tool">
-                            <li class="w-100 btn" data-id="textTool" data-value="Textarea">
+                            <li class="btn" data-id="textTool" data-value="Textarea">
                                 Text Area <svg width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
                                     <g clip-path="url(#a)" fill="#003BB3">
@@ -87,7 +92,7 @@ include(SHARED_PATH . '/header.php');
                                 </svg>
                             </li>
 
-                            <li class="w-100 btn" data-id="signTool" data-value="Sign">
+                            <li class=" btn" data-id="signTool" data-value="Sign">
                                 Signature <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
                                     <g clip-path="url(#a)" fill="#003BB3">
@@ -102,7 +107,7 @@ include(SHARED_PATH . '/header.php');
                                     </defs>
                                 </svg>
                             </li>
-                            <li class="w-100 btn" data-id="initialTool" data-value="Initial">
+                            <li class=" btn" data-id="initialTool" data-value="Initial">
                                 Initial <svg width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
                                     <path
@@ -112,7 +117,7 @@ include(SHARED_PATH . '/header.php');
                             </li>
 
 
-                            <li class="w-100 btn" data-id="dateTool" data-value="Date"> Date
+                            <li class=" btn" data-id="dateTool" data-value="Date"> Date
                                 Signed <svg width="21" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
                                     <path
@@ -121,7 +126,7 @@ include(SHARED_PATH . '/header.php');
                                 </svg>
                             </li>
 
-                            <li class="w-100 btn" data-id="sealTool" data-value="Seal">
+                            <li class=" btn" data-id="sealTool" data-value="Seal">
                                 Seal <svg width="21" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
                                     <g clip-path="url(#a)" fill="#003BB3">
@@ -139,7 +144,7 @@ include(SHARED_PATH . '/header.php');
                                     </defs>
                                 </svg>
                             </li>
-                            <li class="w-100 btn" data-id="stampTool" data-value="Stamp">
+                            <li class=" btn" data-id="stampTool" data-value="Stamp">
                                 Stamp
                                 <svg width="21" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="ml-auto">
@@ -155,17 +160,15 @@ include(SHARED_PATH . '/header.php');
                 </div>
             </div>
         </div>
-        <div class="col-7 ">
+        <div class="col-lg-8">
             <div class="card">
-                <div class="card-body" id="mainWrapper">
-
-                </div>
+                <div class="card-body" id="mainWrapper" style="overflow-x:scroll;"></div>
             </div>
         </div>
-        <div class="col-2 ">
+        <div class="col-lg-2 d-sm-none d-lg-block">
             <div class="d-flex justify-content-center">
-                <div class="sidebar-nav card px-2 pt-2">
-                    <div style="width: 150px; height: 100vh">
+                <div class="sidebar-nav card px-2 pt-2" style="width: 172px;">
+                    <div style="height: 100vh">
                         <div>Tool Management
                             <hr>
                         </div>
@@ -177,7 +180,7 @@ include(SHARED_PATH . '/header.php');
                                 <div class="btn  btn-sm" id="shopping_cart">0</div>
                             </div>
 
-                            <button class="btn-sm btn-outline-dark w-100 mt-1" style="cursor:pointer;"
+                            <button class="btn-sm btn-outline-dark  mt-1" style="cursor:pointer;"
                                 id="clearSession">Clear All</button>
                         </div>
                     </div>
@@ -473,7 +476,7 @@ include(SHARED_PATH . '/header.php');
                                                 <td colspan="4" align="left">
                                                     <input type="hidden" name="total_item" class="form-control "
                                                         id="total_item" value="1">
-                                                    <!-- <button type="submit" name="create_request" id="create_request" class="btn btn-primary">Generate Invoice</button> -->
+                                                   
                                                 </td>
                                             </tr>
                                         </table>
@@ -591,7 +594,7 @@ $(document).on("click", ".element", function(e) {
         name == 'Sign' ? category = 1 : category = 2;
         findElement(parentID, parentName, category)
     } else {
-        alert(name)
+        // alert(name)
     }
 });
 
