@@ -111,7 +111,7 @@ include(SHARED_PATH . '/header.php');
     </form>
 </section>
 
-
+<input type="hidden" value="<?php echo url_for("document-edit/") ?>" id="baseURL">
 
 <?php   include(SHARED_PATH . '/footer.php'); ?>
 <script type="text/javascript">
@@ -165,7 +165,8 @@ $(document).on('keyup', '#title', function() {
 
 function ajax_file_upload(files_obj) {
     if (files_obj != undefined) {
-        const baseURL = window.location.href;
+        // const baseURL = window.location.href;
+        const baseURL = $("#baseURL").val();
         var title = $('#title').val();
         var form_data = new FormData();
         for (i = 0; i < files_obj.length; i++) {
