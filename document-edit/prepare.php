@@ -2,7 +2,7 @@
 
 $page = 'Prepare';
 $page_title = 'Document Preparation';
-$previous_page = $_SERVER['HTTP_REFERER'];
+// $previous_page = $_SERVER['HTTP_REFERER'];
 
 if($_GET['type'] == 1){
     $documents = Document::find_by_document_ids($_GET['document_id']);
@@ -61,7 +61,7 @@ include(SHARED_PATH . '/header.php');
             <p>
                 Please review this document and click on proceed
             </p>
-            <a href="<?php echo $previous_page; ?> " class="btn btn-outline-secondary waves-effect">Go
+            <a href="<?php echo url_for('document-edit/'); ?> " class="btn btn-outline-secondary waves-effect">Go
                 Back</a>
             <a href="<?php echo url_for('document-edit/edit.php?document_id='.$_GET['document_id']) ?>"
                 class="btn btn-primary me-1 waves-effect waves-float waves-light" id="proceed_toEdit">Proceed</a>
@@ -72,21 +72,6 @@ include(SHARED_PATH . '/header.php');
 
 </div>
 
-<!-- <div class="offcanvas offcanvas-bottom show" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel"
-    style="visibility: visible;" aria-modal="true" role="dialog">
-    <div class="offcanvas-header">
-        <h5 id="offcanvasBottomLabel" class="offcanvas-title">Processing...</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <p>
-            We are preparing your document, almost there
-        </p>
-        <a href="<?php //echo url_for('document-edit/edit.php?document_id='.$_GET['document_id']) ?>"
-            class="btn btn-primary me-1 waves-effect waves-float waves-light" id="proceed_toEdit">Proceed</a>
-        <button type="button" class="btn btn-outline-secondary waves-effect" data-bs-dismiss="offcanvas">Cancel</button>
-    </div>
-</div> -->
 <?php include(SHARED_PATH . '/footer.php') ?>
 
 <script type=" text/javascript" src="js/pdf.js"></script>

@@ -45,17 +45,7 @@ include(SHARED_PATH . '/header.php');
 <!-- <div style="height: 10vh;"></div> -->
 <div class="container-fluid  ">
     <div class="row  mb-1">
-        <div class="d-flex justify-content-end ">
-            <!-- <div class="d-inline"> -->
-            <div class="btn-group">
-                <div class="btn  btn-sm">Added Tool</div>
-                <div class="btn  btn-sm" id="shopping_cart">0</div>
-            </div>
-            <div class="p-1 btn-sm btn-outline-primary">
-                <a href="#" class="" style="cursor:pointer;" id="clearSession">Clear All</a>
-            </div>
-            <!-- </div> -->
-        </div>
+
     </div>
     <div class="row">
         <div class="col-3  ">
@@ -179,8 +169,16 @@ include(SHARED_PATH . '/header.php');
                         <div>Tool Management
                             <hr>
                         </div>
+                        <button class="btn btn-sm btn-outline-dark" id="updateSignature">Update Signature</button>
+                        <hr>
                         <div>
-                            Hello
+                            <div class="btn-group mt-1">
+                                <div class="btn  btn-sm">Added Tool</div>
+                                <div class="btn  btn-sm" id="shopping_cart">0</div>
+                            </div>
+
+                            <button class="btn-sm btn-outline-dark w-100 mt-1" style="cursor:pointer;"
+                                id="clearSession">Clear All</button>
                         </div>
                     </div>
                 </div>
@@ -196,24 +194,24 @@ include(SHARED_PATH . '/header.php');
 </div>
 
 <div class="box signTool" id="signTool">
-    <div> Sign <i data-feather='arrow-down-right'></i></div>
+    <div class="element"> Sign <i data-feather='arrow-down-right'></i></div>
 
 </div>
 
 <div class="box initialTool" id="initialTool">
-    <div> Initial <i data-feather='arrow-down-right'></i></div>
+    <div class="element"> Initial <i data-feather='arrow-down-right'></i></div>
 
 </div>
 
 <div class="box stampTool" id="stampTool">
-    <div>Stamp <i data-feather='arrow-down-right'></i></div>
+    <div class="element">Stamp <i data-feather='arrow-down-right'></i></div>
 </div>
 <div class="box sealTool" id="sealTool">
-    <div>Seal <i data-feather='arrow-down-right'></i></div>
+    <div class="element">Seal <i data-feather='arrow-down-right'></i></div>
 </div>
 
 <div class="box dateTool" id="dateTool">
-    <div>Date <i data-feather='arrow-down-right'></i></div>
+    <div class="element">Date <i data-feather='arrow-down-right'></i></div>
 </div>
 </div>
 
@@ -221,7 +219,7 @@ include(SHARED_PATH . '/header.php');
 
 
 
-<div class="modal fade text-start show" id="createSignatureModal" style="display:  ;">
+<div class="modal fade text-start" id="createSignatureModal">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg ">
         <div class="modal-content">
             <div class="modal-header">
@@ -234,11 +232,11 @@ include(SHARED_PATH . '/header.php');
                         <div class="col-6">
                             <div class="mb-1 row">
                                 <div class="col-sm-3 col-md-3">
-                                    <label class="col-form-label" for="fname-icon">Full Name</label>
+                                    <label class="col-form-label" for="fullName">Full Name</label>
                                 </div>
                                 <div class="col-sm-9 col-md-9">
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="fname-icon" class="form-control" name="fname-icon"
+                                        <input type="text" id="fullName" class="form-control" name="fullName"
                                             value="Shafi Akinropo" placeholder="Full name">
                                     </div>
                                 </div>
@@ -248,12 +246,12 @@ include(SHARED_PATH . '/header.php');
                         <div class="col-5">
                             <div class="mb-1 row">
                                 <div class="col-sm-3 col-md-3">
-                                    <label class="col-form-label" for="initials-icon">Initials</label>
+                                    <label class="col-form-label" for="initials">Initials</label>
                                 </div>
                                 <div class="col-sm-9 col-md-9">
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="initials-icon" class="form-control" name="initials-icon"
-                                            value="SA" placeholder="Initial">
+                                        <input type="text" id="initials" class="form-control" name="initials" value="SA"
+                                            placeholder="Initial">
                                     </div>
                                 </div>
                             </div>
@@ -315,11 +313,11 @@ include(SHARED_PATH . '/header.php');
                                                             <div class="css-pl8xw2" id="digi-sign<?php echo $key ?>">
                                                                 <!-- Signed on ToNote by: -->
                                                                 <div class="css-fv3lde">
-                                                                    <span class="css-4x8v88"
+                                                                    <span class="css-4x8v88 fullName"
                                                                         style="font-family: <?php echo $value?>;">Shafi
                                                                         Akinropo</span>
                                                                 </div>
-                                                                <!--  <span
+                                                                <!-- <span
                                                                     class="css-1j983t3 signatureID">6D80C6DF365242545678</span> -->
                                                             </div>
                                                         </label>
@@ -331,7 +329,7 @@ include(SHARED_PATH . '/header.php');
                                                         <div class="css-pl8xw2">
                                                             <!-- Signed on ToNote by: -->
                                                             <div class="css-fv3lde">
-                                                                <span class="css-4x8v88"
+                                                                <span class="css-4x8v88 initials"
                                                                     style="font-family: <?php echo $value?>;">SA</span>
                                                             </div>
                                                             <!-- <span
@@ -386,6 +384,9 @@ include(SHARED_PATH . '/header.php');
             </div>
             <div class="p-2 ">
                 <div class="pb-1">
+                    <!-- By signing this document with my electronic signature. 
+                    I agree that the signature is as valid as my hand writen signature to the extent allowed by law -->
+
                     By clicking Create, I agree that the signature and initials will be the electronic
                     representation of my signature and initials for all purposes when I (or my agent) use them
                     on document through this platform, including legally binding contracts - just the same as a
@@ -399,9 +400,10 @@ include(SHARED_PATH . '/header.php');
                         </tr>
                     </table>
                     <div>
+
                         <button type="button"
                             class="btn btn-primary waves-effect waves-float waves-light btn-choose disabled"
-                            id="choose">Create</button>
+                            id="choose">Adopt this</button>
                     </div>
 
 
@@ -419,6 +421,7 @@ include(SHARED_PATH . '/header.php');
 
 <input type="hidden" id="selectedSignature">
 <input type="hidden" id="watch">
+
 
 
 <input type="hidden" class="url" value="upload/certificate.pdf">
@@ -494,13 +497,36 @@ include(SHARED_PATH . '/header.php');
     </div>
 </div>
 
+
+<div class="modal fade show" id="selectSignatureModal" style="">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Pick a resource to append</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="elemId">
+                <input type="hidden" id="elemName">
+                <div id="showElement"></div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-primary waves-effect waves-float waves-light" data-bs-dismiss="modal">Accept</button> -->
+                <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Append</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php   include(SHARED_PATH . '/footer.php'); ?>
-<script src="js/signature.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js">
+
+<script src="js/draw-signature.js"></script>
+<script type="text/javascript" src="js/html2canvas.js">
 </script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script src="js/doc-edit.js"></script>
-
+<script src="js/create-signature.js"></script>
 <script type="text/javascript" src="js/scrolltoolbar.js"></script>
 
 <script type="text/javascript">
@@ -508,12 +534,21 @@ $(document).on('click', '#addSigner', function() {
     $("#addSignerModal").modal("show");
 })
 
+$(document).on("keyup", "#fullName", function() {
+    let inputField = $(this).val();
+    $(".fullName").html(inputField)
+})
+$(document).on("keyup", "#initials", function() {
+    let inputField = $(this).val();
+    $(".initials").html(inputField)
+})
 var count = 1;
 $(document).on('click', '#add_row', function() {
     count = count + 1;
     $('#total_item').val(count);
 
     var html_code = '';
+
     html_code += '<tr id="row_id_' + count + '">';
     html_code += '<td><span id="sr_no">' + count + '</span></td>';
     html_code += '<td><input type="text" name="full_name[]" id="full_name' + count + '" data-srno="' + count +
@@ -544,4 +579,42 @@ $(document).on('click', '.remove_row', function() {
     $('#total_item').val(count);
 
 });
+
+$(document).on("click", ".element", function(e) {
+    var name = $(this).html();
+    var parentID = $(this).closest(".box").prop("id");
+    var parentName = $(this).closest(".box").data("name");
+    var elemId = $("#elemId").val(parentID)
+    var elemName = $("#elemName").val(parentName)
+    let category = '';
+    if (name == 'Sign' || name == 'Initial') {
+        name == 'Sign' ? category = 1 : category = 2;
+        findElement(parentID, parentName, category)
+    } else {
+        alert(name)
+    }
+});
+
+
+function findElement(parentID, parentName, category) {
+    $.ajax({
+        url: "inc/find-element.php",
+        method: "POST",
+        dataType: "json",
+        data: {
+            findElement: 1,
+            tool_id: parentID,
+            name: parentName,
+            category: category,
+        },
+        success: function(data) {
+            $("#selectSignatureModal").modal("show");
+            $("#showElement").html(data.details)
+
+        },
+    });
+}
+$(document).on("click", "#updateSignature", function() {
+    $("#createSignatureModal").modal('show')
+})
 </script>

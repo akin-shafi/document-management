@@ -65,6 +65,13 @@ include(SHARED_PATH . '/header.php');
 </style>
 
 <section class="container-fluid">
+    <div class="card d-none">
+        <div class="card-body">
+            <h3>Is your document ready?</h3>
+            <div>If you already have your template, Kindly upload below or click on select a template toi choose
+                one.</div>
+        </div>
+    </div>
     <div class="card ">
         <?php if($req_type == 1): ?>
         <div class=" card-body">

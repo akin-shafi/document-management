@@ -19,11 +19,11 @@ $total_item = 0;
 		
 		{	
 			if ($values["tool_text"] == "Textarea") {
-				$output .= '<dl class=" '.$values["tool_class"].' er'.$values["tool_id"].'" data-name="'.$values["tool_text"].'" id="'.$values["tool_id"].'" style="top: '.$values["tool_top_pos"].'; left:'.$values["tool_left_pos"].'">
+				$output .= '<dl class=" '.$values["tool_class"].' '.$values["tool_text"].'" data-name="'.$values["tool_text"].'" id="'.$values["tool_id"].'" style="top: '.$values["tool_top_pos"].'; left:'.$values["tool_left_pos"].'">
 								<button type="button" class="btn-close deleteItem"  data-id="'.$values["tool_id"].'"></button>
 								<div style="position:relative">
 									
-									<div><input aria-invalid="false" type="text"  class="textareaTool" value=""></div>
+									<div class="element"><input aria-invalid="false" type="text"  class="textareaTool" value=""></div>
 								</div>
 						    </dl>
 				';
@@ -31,10 +31,10 @@ $total_item = 0;
 
 
 				$output .= '
-					<dl class=" '.$values["tool_class"].' er'.$values["tool_id"].'" data-name="'.$values["tool_text"].'" id="'.$values["tool_id"].'" style="top: '.$values["tool_top_pos"].'; left:'.$values["tool_left_pos"].'">
+					<dl class=" '.$values["tool_class"].' '.$values["tool_text"].'" data-name="'.$values["tool_text"].'" id="'.$values["tool_id"].'" style="top: '.$values["tool_top_pos"].'; left:'.$values["tool_left_pos"].'">
 						<div>
 							<button type="button" class="btn-close deleteItem" data-id="'.$values["tool_id"].'"></button>
-							<div>'.$values["tool_text"].'</div>
+							<div class="element">'.$values["tool_text"].'</div>
 							
 						</div>
 					</dl>

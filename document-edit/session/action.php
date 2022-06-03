@@ -27,6 +27,7 @@ if(isset($_POST["action"]))
 					'tool_qty'         		=>     $_POST["tool_qty"],
 					'tool_top_pos'         	=>     $_POST["tool_top_pos"],
 					'tool_left_pos'         =>     $_POST["tool_left_pos"],
+					'filename'         		=>     '',
 				);
 				$_SESSION["docu_edit"][] = $item_array;
 			}
@@ -41,6 +42,7 @@ if(isset($_POST["action"]))
 				'tool_qty'         		=>     $_POST["tool_qty"],
 				'tool_top_pos'         	=>     $_POST["tool_top_pos"],
 				'tool_left_pos'         =>     $_POST["tool_left_pos"],
+				'filename'         		=>     '',
 			);
 			$_SESSION["docu_edit"][] = $item_array;
 		}
@@ -108,6 +110,7 @@ if(isset($_POST["edit"]))
 					'tool_qty'         		=>     $_POST["tool_qty"],
 					'tool_top_pos'         	=>     $_POST["tool_top_pos"],
 					'tool_left_pos'         =>     $_POST["tool_left_pos"],
+					'filename'         		=>     '',
 				);
 				$_SESSION["docu_edit"][] = $item_array;
 
@@ -125,6 +128,7 @@ if(isset($_POST["edit"]))
 				'tool_qty'         		=>     $_POST["tool_qty"],
 				'tool_top_pos'         	=>     $_POST["tool_top_pos"],
 				'tool_left_pos'         =>     $_POST["tool_left_pos"],
+				'filename'         		=>     '',
 			);
 			$_SESSION["docu_edit"][] = $item_array;
 			print_r($item_array);

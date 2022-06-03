@@ -2,10 +2,11 @@
 class Document extends DatabaseObject
 {
     protected static $table_name = "document";
-    protected static $db_columns = ['id', 'document_id', 'filename', 'status', 'created_at', 'updated_at', 'created_by', 'deleted'];
+    protected static $db_columns = ['id', 'document_id', 'title', 'filename', 'status', 'created_at', 'updated_at', 'created_by', 'deleted'];
 
     public $id;
     public $document_id;
+    public $title;
     public $filename;
     public $status;
     public $created_at;
@@ -23,9 +24,18 @@ class Document extends DatabaseObject
         4 => 'Sent',
     ];
 
+    const REQUEST_TYPE = [
+        1 => 'Get an Affidavit',
+        2 => 'Request a Notary',
+        3 => 'Sign a Document',
+    ];
+
+    
+
     public function __construct($args = [])
     {
         $this->document_id = $args['document_id'] ?? '';
+        $this->title = $args['title'] ?? '';
         $this->filename    = $args['filename'] ?? '';
         $this->status      = $args['status'] ?? 1;
         $this->created_by  = $args['created_by'] ?? '';

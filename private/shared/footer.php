@@ -35,6 +35,7 @@
        <script src="<?php echo url_for('assets/js/app-menu.min.js') ?>"></script>
        <script src="<?php echo url_for('assets/js/app.min.js') ?>"></script>
        <script src="<?php echo url_for('assets/js/customizer.min.js') ?>"></script>
+       <script src="<?php echo url_for('assets/js/sweetalert2.all.min.js') ?>"></script>
 
 
        <!-- END: Theme JS-->
@@ -46,6 +47,7 @@
        <script src="<?php echo url_for('assets/js/toastr.min.js') ?>"></script>
        <script src="<?php echo url_for('assets/js/select2.full.min.js') ?>"></script>
        <script src="<?php echo url_for('assets/js/app-email.min.js') ?>"></script>
+
        <!-- END: Page JS-->
 
        <script>
@@ -57,6 +59,73 @@ $(window).on('load', function() {
         });
     }
 })
+
+function successAlert(msg) {
+    Swal.fire({
+        title: msg,
+        icon: "success",
+        // html: 'Would you like to send an <b>sms or email</b> to the Customer ?',
+        showCloseButton: !1,
+        // showCancelButton: !0,
+        focusConfirm: !1,
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Ok!',
+        confirmButtonAriaLabel: "Thumbs up, great!",
+        // cancelButtonText: '<i class="fa fa-thumbs-down"></i> No',
+        // cancelButtonAriaLabel: "Thumbs down",
+        confirmButtonClass: "btn btn-primary",
+        buttonsStyling: !1,
+        // cancelButtonClass: "btn btn-danger ml-1"
+    });
+}
+
+function successTime(msg) {
+    Swal.fire({
+        position: "bottom-end",
+        icon: "success",
+        title: msg,
+        showConfirmButton: !1,
+        timer: 1500,
+        customClass: {
+            confirmButton: "btn btn-primary"
+        },
+        buttonsStyling: !1
+    })
+}
+
+function errorAlert(msg) {
+    Swal.fire({
+        title: msg,
+        icon: "error",
+        // html: 'Would you like to send an <b>sms or email</b> to the Customer ?',
+        showCloseButton: !1,
+        timer: 1500,
+        showCancelButton: !1,
+        // focusConfirm: !1,
+        // confirmButtonText: '<i class="fa fa-thumbs-up"></i> Ok!',
+        // confirmButtonAriaLabel: "Thumbs up, great!",
+        // cancelButtonText: '<i class="la la-thumbs-down"></i> No',
+        // cancelButtonAriaLabel: "Thumbs down",
+        customClass: {
+            confirmButton: "btn btn-primary"
+        },
+        buttonsStyling: !1,
+        // cancelButtonClass: "btn btn-danger ml-1"
+    });
+}
+
+function errorTime(msg) {
+    Swal.fire({
+        position: "bottom-end",
+        icon: "error",
+        title: msg,
+        showConfirmButton: !1,
+        timer: 1500,
+        customClass: {
+            confirmButton: "btn btn-primary"
+        },
+        buttonsStyling: !1
+    })
+}
        </script>
        </body>
        <!-- END: Body-->

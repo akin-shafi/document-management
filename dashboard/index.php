@@ -173,11 +173,11 @@ include(SHARED_PATH . '/header.php');
                         <div class="action-right">
                             <ul class="list-inline m-0">
 
-                                <li class="list-inline-item mail-unread">
+                                <!-- <li class="list-inline-item mail-unread">
                                     <span class="action-icon">
                                         <i data-feather='edit'></i>
                                     </span>
-                                </li>
+                                </li> -->
                                 <li class="list-inline-item mail-delete">
                                     <span class="action-icon">
                                         <i data-feather='trash-2'></i>
@@ -208,9 +208,8 @@ include(SHARED_PATH . '/header.php');
                                     <div class="mail-details">
                                         <div class="mail-items">
                                             <h5 class="mb-25 text-dark"><b><?php echo $doc->title ?></b></h5>
-                                            <span class="text-truncate">🎯 <b>Perticipants</b>: Fikayo Durosinmi, Shafi
-                                                Akinropo, Daniel
-                                                Enyang </span>
+                                            <span class="text-truncate">🎯 <b>Perticipants</b>: Shafi
+                                                Akinropo </span>
                                         </div>
                                         <div class="mail-meta-item">
                                             <div>Last Updated</div>
@@ -249,7 +248,7 @@ include(SHARED_PATH . '/header.php');
                                     <polyline points="15 18 9 12 15 6"></polyline>
                                 </svg>
                             </span>
-                            <h4 class="email-subject mb-0">Focused open system 😃</h4>
+                            <h4 class="email-subject mb-0">Back</h4>
                         </div>
                         <div class="email-header-right ms-2 ps-1">
                             <ul class="list-inline m-0">
@@ -396,7 +395,7 @@ include(SHARED_PATH . '/header.php');
                         <div class="row">
                             <div class="col-12">
                                 <div class="email-label">
-                                    <span class="mail-label badge rounded-pill badge-light-primary">Company</span>
+                                    <span class="mail-label badge rounded-pill badge-light-primary">Draft</span>
                                 </div>
                             </div>
                         </div>
@@ -406,17 +405,17 @@ include(SHARED_PATH . '/header.php');
                                     <div class="card-header email-detail-head">
                                         <div
                                             class="user-details d-flex justify-content-between align-items-center flex-wrap">
-                                            <div class="avatar me-75">
+                                            <!-- <div class="avatar me-75">
                                                 <img src="jpg/avatar-s-9.jpg" alt="avatar img holder" width="48"
                                                     height="48">
-                                            </div>
+                                            </div> -->
                                             <div class="mail-items">
-                                                <h5 class="mb-0">Carlos Williamson</h5>
+                                                <h5 class="mb-0">Contract Agreement</h5>
                                                 <div class="email-info-dropup dropdown">
                                                     <span role="button" class="dropdown-toggle font-small-3 text-muted"
                                                         id="card_top01" data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                        carlos@gmail.com
+                                                        Participants: Shafi Akinropo,
                                                     </span>
                                                     <div class="dropdown-menu" aria-labelledby="card_top01">
                                                         <table class="table table-sm table-borderless">
@@ -499,179 +498,23 @@ include(SHARED_PATH . '/header.php');
                                     </div>
                                     <div class="card-body mail-message-wrapper pt-2">
                                         <div class="mail-message">
-                                            <p class="card-text">Hey John,</p>
-                                            <p class="card-text">
+                                            <!-- <p class="card-text">Hey John,</p> -->
+                                            <!-- <p class="card-text">
                                                 bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine
                                                 preimaginary saunders demidolmen
                                                 Chaldaic allusiveness lorriker unworshipping ribaldish tableman
                                                 hendiadys outwrest unendeavored
                                                 fulfillment scientifical Pianokoto Chelonia
-                                            </p>
+                                            </p> -->
+                                            <img src="<?php echo url_for("document-edit/upload/affidavit.png") ?>"
+                                                class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header email-detail-head">
-                                        <div
-                                            class="user-details d-flex justify-content-between align-items-center flex-wrap">
-                                            <div class="avatar me-75">
-                                                <img src="jpg/avatar-s-18.jpg" alt="avatar img holder" width="48"
-                                                    height="48">
-                                            </div>
-                                            <div class="mail-items">
-                                                <h5 class="mb-0">Ardis Balderson</h5>
-                                                <div class="email-info-dropup dropdown">
-                                                    <span role="button" class="dropdown-toggle font-small-3 text-muted"
-                                                        id="dropdownMenuButton200" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        abaldersong@utexas.edu
-                                                    </span>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton200">
-                                                        <table class="table table-sm table-borderless">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="text-end">From:</td>
-                                                                    <td>abaldersong@utexas.edu</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-end">To:</td>
-                                                                    <td>johndoe@ow.ly</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-end">Date:</td>
-                                                                    <td>4:25 AM 13 Jan 2018</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mail-meta-item d-flex align-items-center">
-                                            <small class="mail-date-time text-muted">17 May, 2020, 4:14</small>
-                                            <div class="dropdown ms-50">
-                                                <div role="button" class="dropdown-toggle hide-arrow" id="email_more_2"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-more-vertical font-medium-2">
-                                                        <circle cx="12" cy="12" r="1"></circle>
-                                                        <circle cx="12" cy="5" r="1"></circle>
-                                                        <circle cx="12" cy="19" r="1"></circle>
-                                                    </svg>
-                                                </div>
-                                                <div class="dropdown-menu dropdown-menu-end"
-                                                    aria-labelledby="email_more_2">
-                                                    <div class="dropdown-item">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="feather feather-corner-up-left me-50">
-                                                            <polyline points="9 14 4 9 9 4"></polyline>
-                                                            <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
-                                                        </svg>
-                                                        Reply
-                                                    </div>
-                                                    <div class="dropdown-item">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="feather feather-corner-up-right me-50">
-                                                            <polyline points="15 14 20 9 15 4"></polyline>
-                                                            <path d="M4 20v-7a4 4 0 0 1 4-4h12"></path>
-                                                        </svg>
-                                                        Forward
-                                                    </div>
-                                                    <div class="dropdown-item">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="feather feather-trash-2 me-50">
-                                                            <polyline points="3 6 5 6 21 6"></polyline>
-                                                            <path
-                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                            </path>
-                                                            <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                            <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                        </svg>
-                                                        Delete
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body mail-message-wrapper pt-2">
-                                        <div class="mail-message">
-                                            <p class="card-text">Hey John,</p>
-                                            <p class="card-text">
-                                                bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine
-                                                preimaginary saunders demidolmen
-                                                Chaldaic allusiveness lorriker unworshipping ribaldish tableman
-                                                hendiadys outwrest unendeavored
-                                                fulfillment scientifical Pianokoto Chelonia
-                                            </p>
-                                            <p class="card-text">
-                                                Freudian sperate unchary hyperneurotic phlogiston duodecahedron unflown
-                                                Paguridea catena disrelishable
-                                                Stygian paleopsychology cantoris phosphoritic disconcord fruited inblow
-                                                somewhatly ilioperoneal forrard
-                                                palfrey Satyrinae outfreeman melebiose
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="mail-attachments">
-                                            <div class="d-flex align-items-center mb-1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-paperclip font-medium-1 me-50">
-                                                    <path
-                                                        d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48">
-                                                    </path>
-                                                </svg>
-                                                <h5 class="fw-bolder text-body mb-0">2 Attachments</h5>
-                                            </div>
-                                            <div class="d-flex flex-column">
-                                                <a href="#" class="mb-50">
-                                                    <img src="png/doc.png" class="me-25" alt="png" height="18">
-                                                    <small class="text-muted fw-bolder">interdum.docx</small>
-                                                </a>
-                                                <a href="#">
-                                                    <img src="png/jpg.png" class="me-25" alt="png" height="18">
-                                                    <small class="text-muted fw-bolder">image.png</small>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <h5 class="mb-0">
-                                                Click here to
-                                                <a href="#">Reply</a>
-                                                or
-                                                <a href="#">Forward</a>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                             <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
                         </div>

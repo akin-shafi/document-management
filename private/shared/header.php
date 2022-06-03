@@ -41,6 +41,8 @@
 
     <?php if ($page == 'Dashboard') { ?>
     <link rel="stylesheet" type="text/css" href="<?php echo url_for('assets/css/app-email.min.css') ?>">
+    <link rel="stylesheet" type="text/css"
+        href="<?php echo url_for('assets/css/ext-component-sweet-alerts.min.css') ?>">
     <?php  } ?>
     <!-- END: Page CSS-->
 
@@ -63,7 +65,7 @@
         <div class="navbar-header d-xl-block d-none">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="<?php echo url_for('dashboarddashboard/') ?>">
+                    <a class="navbar-brand" href="<?php echo url_for('dashboard/') ?>">
                         <img src="<?php echo url_for('assets/images/logo-dark.png') ?>" alt="" height="26">
                         <!-- <span class="brand-logo">Logo Goes here</span> -->
                         <!-- <h2 class="brand-text mb-0">Vuexy</h2> -->

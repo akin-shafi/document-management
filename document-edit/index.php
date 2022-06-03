@@ -78,7 +78,7 @@ include(SHARED_PATH . '/header.php');
             <div class="card-body">
 
                 <div class="form-group mb-2">
-                    <label>Give your Document a title</label>
+                    <label>Document a title</label>
                     <input type="text" name="title" class="form-control border-dark" required id="title"
                         placeholder="Enter document title">
                 </div>
@@ -149,13 +149,11 @@ function file_explorer() {
         document.getElementById('selectFile').onchange = function() {
             files = document.getElementById('selectFile').files;
             ajax_file_upload(files);
-
         };
     } else {
         alert("Please enter Document title")
         $("#title").addClass("border-danger").focus();
     }
-
 }
 $(document).on('keyup', '#title', function() {
     $("#title").removeClass("border-danger").addClass("border-primary");
@@ -172,9 +170,10 @@ function ajax_file_upload(files_obj) {
         var form_data = new FormData();
         for (i = 0; i < files_obj.length; i++) {
             form_data.append('file[]', files_obj[i]);
+            form_data.append('title', title);
         }
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "upload.php", true);
+        xhttp.open("POST", "inc/upload.php", true);
         xhttp.onload = function(event) {
             if (xhttp.status == 200) {
 
@@ -217,7 +216,8 @@ $(document).on('click', '.ds-remove', function(e) {
         dataType: 'json',
         success: function(r) {
             if (r.success == true) {
-                $(this).closest('.card').addClass('d-none');
+                $(this).closest('.card').remove();
+                $("#selectFile").val(null)
             } else {
                 console.log(r.msg)
             }
