@@ -52,7 +52,7 @@ $(document).on("click", "#mainWrapper", function (e) {
     }
     var action = "add";
     var tool_id = cId;
-    var tool_class = "box";
+    var tool_class = "tool-box tool-style";
     var tool_text = toolName;
     var tool_top_pos = y;
     var tool_left_pos = x;
@@ -155,8 +155,9 @@ function clearCart() {
   });
 }
 
-load_session_data();
+load_session_data()
 function load_session_data() {
+  // fetch_record()
   var document_id = $("#document_id").val();
 
   console.log(document_id);
@@ -166,15 +167,30 @@ function load_session_data() {
     dataType: "json",
     data: { document_id: document_id },
     success: function (data) {
-      // console.log(data.session_details);
       $("#mainWrapper").html(data.session_details);
       $("#shopping_cart").html(data.total_item);
-      // $( ".box" ).draggable();
-      // console.log(data)
       savedragged();
+      dragElement();
     },
   });
 }
+// fetch_record()
+// function fetch_record() {
+//   var document_id = $("#document_id").val();
+
+//   console.log(document_id);
+//   $.ajax({
+//     url: "session/fetch_record.php",
+//     method: "POST",
+//     dataType: "json",
+//     data: { document_id: document_id },
+//     success: function (data) {
+//       $("#mainWrapper").html(data.session_details);
+//       $("#shopping_cart").html(data.total_item);
+//       // load_session_data();
+//     },
+//   });
+// }
 
 // Add a circle to the document and return its handle
 function appendToolbox(x, y, eId) {
@@ -225,7 +241,7 @@ function removeMouseMoveListener() {
 }
 
 function savedragged() {
-  $(".box").each(function () {
+  $(".tool-box").each(function () {
     var $elem = $(this);
     var tool_text = $(this).data("name");
     var tool_id = $(this).attr("id");
@@ -249,6 +265,51 @@ function savedragged() {
     });
   });
 }
+function dragElement() {
+  $(".main-element").each(function () {
+    var $elem = $(this);
+    var tool_id = $(this).data("id");
+    let edit = "edit_element";
+    $elem.draggable({
+      containment: "#mainWrapper",
+      scroll: false,
+      stop: function (e, ui) {
+        let tool_top_pos = ui.position.top;
+        let tool_left_pos = ui.position.left;
+        editElement(
+          edit,
+          tool_id,
+          tool_top_pos,
+          tool_left_pos,
+        );
+      },
+    });
+  });
+}
+
+
+function editElement(
+  edit,
+  tool_id,
+  tool_top_pos,
+  tool_left_pos,
+) {
+  $.ajax({
+    url: "session/edit_element.php",
+    method: "POST",
+    data: {
+      tool_id: tool_id,
+      tool_top_pos: tool_top_pos,
+      tool_left_pos: tool_left_pos,
+      edit: edit,
+    },
+    success: function (data) {
+      load_session_data();
+      // move(tool_id)
+    },
+  });
+}
+
 
 
 

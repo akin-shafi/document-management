@@ -21,13 +21,15 @@
   padding: 8px 10px 8px 10px;
 }
 #holder,
-.box {
+.tool-box {
   position: absolute;
   z-index: 100;
   cursor: pointer;
   text-align: center;
   font-weight: 500;
   border-radius: 1.45rem;
+}
+.tool-style{
   border: 1px solid #003bb3;
   background: rgb(110, 138, 244, 0.12) !important;
   color: #003bb3 !important;

@@ -1,13 +1,11 @@
 <?php require_once('../../private/initialize.php');
 
-//fetch_cart.php
-// session_start();
 
 $document_id = $_POST['document_id'];
-// print_r($document_id);
+$path = 'upload/';
 $documents = DocumentImage::find_by_document_ids($document_id);
-// print_r($documents);
-// $documents = [1, 2];
+$documentResource = DocumentResource::find_by_document_ids($document_id);
+
 $totalPage = count($documents);
 	
 $total_item = 0;
@@ -24,11 +22,8 @@ $total_item = 0;
 									
 									<div class="element"><input aria-invalid="false" type="text"  class="textareaTool" value=""></div>
 								</div>
-						    </dl>
-				';
+						    </dl>';
 			}else{
-
-
 				$output .= '
 					<dl class=" '.$values["tool_class"].' '.$values["tool_text"].'" data-name="'.$values["tool_text"].'" id="'.$values["tool_id"].'" style="top: '.$values["tool_top_pos"].'; left:'.$values["tool_left_pos"].'">
 						<div>
@@ -38,6 +33,8 @@ $total_item = 0;
 						</div>
 					</dl>
 				';
+				
+				
 			}
 			$total_item = $total_item + 1;
 			
@@ -53,13 +50,20 @@ $total_item = 0;
 		// $_SESSION["docu_edit"];
 	    // print_r($_SESSION["docu_edit"]["docuemnt_id"]);
 	}
+	
+	foreach($documentResource as  $savedTool){
+		$output .= '<img src="'.$path.$savedTool->filename.'" 
+		data-name="'.$savedTool->tool_name.'" 
+		data-id="'.$savedTool->elemId.'"
+		style="top: '.$savedTool->tool_pos_top.'; left: '.$savedTool->tool_pos_left.'; " class="tool-box main-element" />';
+	}
+	
 	foreach ($documents as $key => $value) {
 		$pageNum = $key + 1;
-		
 		$output .= '
-			
 			<div class="border">
-				<img src="upload/document_file/'.$value->filename.'" style="min-width: 500px ;"  class="img-fluid"> 
+				<img src="upload/document_file/'.$value->filename.'" 
+				style="min-width: 500px ;"  class="img-fluid"> 
 			</div>
 			<div class="clearfix">
 				<h6 class="float-end">Page '.$pageNum.' of '.$totalPage.'</h6>
@@ -68,7 +72,7 @@ $total_item = 0;
 	}
 	
 	$data = array(
-		'session_details'		=>	$output,
+		'session_details'	=>	$output,
 		'total_item'		=>	$total_item,
 		// 'total_price'		=>	 number_format($total_price, 2),
 		

@@ -1,5 +1,5 @@
 <?php  require_once('../../private/initialize.php');
-       session_start();
+
        if(isset($_POST['findSignature'])){
             $findSignature = SignatureDetail::find_by_user_ids($user_id);
             if(empty($findSignature)){
@@ -21,14 +21,19 @@
                     $name = $_POST["name"];
                     $user_id = $loggedInAdmin->id ?? 0;
                     $category = $_POST["category"];
+                    $pos_top = $values['tool_top_pos'];
+                    $pos_left = $values['tool_left_pos'];
                     // if($name == 'Sign'){
                         $tools = SignatureDetail::find_by_element(['user_id' => $user_id, 'category' => $category ]);
                         // pre_r($tools);
                         foreach($tools as $tool){
                             // $_SESSION["docu_edit"][$keys]['filename'] = $tool->filename;
                 $output .= '<tr>';
-                $output .= '<td><input type="radio" name="sign" class="form-check-input choose" id="select-img'.$keys.'" data-id="'.$keys.'"></td>';
-                $output .= '<td><label class="form-check-label" for="select-img'.$keys.'" id="signature-img'.$keys.'"><img class="" src="'.$path.$tool->filename.'"></label></td>';
+                $output .= '<td>
+                    <input type="radio" name="saveTool[tool_name]" class="form-check-input tool_name" id="tool_name'.$keys.'" data-file="'.$tool->filename.'" value="'.$name.'">
+                    
+                    </td>';
+                $output .= '<td><label class="form-check-label" for="tool_name'.$keys.'" id="signature-img'.$keys.'"><img class="" src="'.$path.$tool->filename.'"></label></td>';
                 $output .= '</td>';
                 $output .= '</tr>';
                         // }
@@ -46,7 +51,9 @@
 
             $data = array(
                 'details'		=>	$output,
-                // 'total_item'		=>	$total_item,
+                'pos_top'		=>	$pos_top,
+                'pos_left'		=>	$pos_left,
+                // 'filename'		=>	$filename,
                 // 'total_price'		=>	 number_format($total_price, 2),
                 
             );	

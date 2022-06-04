@@ -46,7 +46,7 @@ include(SHARED_PATH . '/header.php');
 <!-- <div style="height: 10vh;"></div> -->
 <div class="container-fluid">
     <div class="row my-2 d-lg-none">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, facere asperiores! Blanditiis dolorem molestias voluptatibus excepturi, dolor veritatis quasi maiores.</h3>
+
     </div>
 
     <div class="row">
@@ -61,13 +61,12 @@ include(SHARED_PATH . '/header.php');
                             <!-- <button type="button" class=""></button> -->
                             <div class="d-grid col-lg-12 col-md-12 mb-1 mb-lg-0">
                                 <button type="button"
-                                    class="btn btn-relief-primary waves-effect waves-float waves-light"
-                                    id="addSigner">
+                                    class="btn btn-relief-primary waves-effect waves-float waves-light" id="addSigner">
                                     <i data-feather='plus'></i>
                                     <span> Add Signer</span>
                                 </button>
                             </div>
-                           
+
                         </div>
                         <div class="border-bottom mb-1 pb-1">
                             <select class="form-control select2 ">
@@ -190,30 +189,30 @@ include(SHARED_PATH . '/header.php');
         </div>
     </div>
 
-    <div class="box textTool" id="textTool">
+    <div class="tool-box  tool-style textTool" id="textTool">
         <input aria-invalid="false" type="text" class="textareaTool" value="">
     </div>
 
 </div>
 
-<div class="box signTool" id="signTool">
+<div class="tool-box  tool-style signTool" id="signTool">
     <div class="element"> Sign <i data-feather='arrow-down-right'></i></div>
 
 </div>
 
-<div class="box initialTool" id="initialTool">
+<div class="tool-box  tool-style initialTool" id="initialTool">
     <div class="element"> Initial <i data-feather='arrow-down-right'></i></div>
 
 </div>
 
-<div class="box stampTool" id="stampTool">
+<div class="tool-box  tool-style stampTool" id="stampTool">
     <div class="element">Stamp <i data-feather='arrow-down-right'></i></div>
 </div>
-<div class="box sealTool" id="sealTool">
+<div class="tool-box  tool-style sealTool" id="sealTool">
     <div class="element">Seal <i data-feather='arrow-down-right'></i></div>
 </div>
 
-<div class="box dateTool" id="dateTool">
+<div class="tool-box  tool-style dateTool" id="dateTool">
     <div class="element">Date <i data-feather='arrow-down-right'></i></div>
 </div>
 </div>
@@ -349,7 +348,7 @@ include(SHARED_PATH . '/header.php');
                                 <div class="tab-pane" id="second" aria-labelledby="second-tab" role="tabpanel">
                                     <div class="row">
                                         <div class="col-sm-9 border-right p-0">
-                                            <div class="text-center">Draw your signature in the box </div>
+                                            <div class="text-center">Draw your signature in the tool-box </div>
                                             <div id="canvas" class="d-flex justify-content-center">
                                                 <canvas class="roundCorners" id="newSignature"
                                                     style="position: relative; margin: 0; padding: 0; border: 1px solid #CCC; width: 474px; height: 313px;"></canvas>
@@ -476,7 +475,7 @@ include(SHARED_PATH . '/header.php');
                                                 <td colspan="4" align="left">
                                                     <input type="hidden" name="total_item" class="form-control "
                                                         id="total_item" value="1">
-                                                   
+
                                                 </td>
                                             </tr>
                                         </table>
@@ -508,15 +507,24 @@ include(SHARED_PATH . '/header.php');
                 <h5 class="modal-title" id="exampleModalCenterTitle">Pick a resource to append</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <input type="hidden" id="elemId">
-                <input type="hidden" id="elemName">
-                <div id="showElement"></div>
-            </div>
-            <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-primary waves-effect waves-float waves-light" data-bs-dismiss="modal">Accept</button> -->
-                <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Append</button>
-            </div>
+            <form method="post" id="saveToolForms">
+                <div class="modal-body">
+
+                    <input type="hidden" id="" name="saveTool[document_id]" value="<?php echo $_GET['document_id']?> ">
+                    <input type="hidden" id="elemId" name="saveTool[elemId]">
+                    <input type="hidden" id="elemName" name="saveTool[elemName]">
+                    <input type="hidden" id="pos_top" name="saveTool[tool_pos_top]">
+                    <input type="hidden" id="pos_left" name="saveTool[tool_pos_left]">
+                    <input type="hidden" id="filename" name="saveTool[filename]">
+
+                    <div id="showElement"></div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-primary waves-effect waves-float waves-light" data-bs-dismiss="modal">Accept</button> -->
+                    <button type="submit" class="btn btn-primary waves-effect waves-float waves-light"
+                        id="append">Append</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -524,7 +532,7 @@ include(SHARED_PATH . '/header.php');
 
 <?php   include(SHARED_PATH . '/footer.php'); ?>
 
-<script src="js/draw-signature.js"></script>
+<script src=" js/draw-signature.js"></script>
 <script type="text/javascript" src="js/html2canvas.js">
 </script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -554,13 +562,16 @@ $(document).on('click', '#add_row', function() {
 
     html_code += '<tr id="row_id_' + count + '">';
     html_code += '<td><span id="sr_no">' + count + '</span></td>';
-    html_code += '<td><input type="text" name="full_name[]" id="full_name' + count + '" data-srno="' + count +
+    html_code += '<td><input type="text" name="full_name[]" id="full_name' + count +
+        '" data-srno="' + count +
         '"  placeholder="Full name" class="form-control form-control-sm number_only full_name" required></td>';
 
-    html_code += '<td><input type="text" name="email[]" id="email' + count + '" data-srno="' + count +
+    html_code += '<td><input type="text" name="email[]" id="email' + count + '" data-srno="' +
+        count +
         '"  placeholder="Email" class="form-control form-control-sm number_only email" required></td>';
 
-    html_code += '<td><input type="text" name="phone[]" id="phone' + count + '" data-srno="' + count +
+    html_code += '<td><input type="text" name="phone[]" id="phone' + count + '" data-srno="' +
+        count +
         '"  placeholder="Phone Number" class="form-control form-control-sm number_only phone"></td>';
 
     html_code += '<td><button type="button" name="remove_row" id="' + count +
@@ -585,8 +596,8 @@ $(document).on('click', '.remove_row', function() {
 
 $(document).on("click", ".element", function(e) {
     var name = $(this).html();
-    var parentID = $(this).closest(".box").prop("id");
-    var parentName = $(this).closest(".box").data("name");
+    var parentID = $(this).closest(".tool-box").prop("id");
+    var parentName = $(this).closest(".tool-box").data("name");
     var elemId = $("#elemId").val(parentID)
     var elemName = $("#elemName").val(parentName)
     let category = '';
@@ -613,11 +624,41 @@ function findElement(parentID, parentName, category) {
         success: function(data) {
             $("#selectSignatureModal").modal("show");
             $("#showElement").html(data.details)
+            $("#pos_left").val(data.pos_left);
+            $("#pos_top").val(data.pos_top);
+            // $("#filename").val(data.filename);
 
         },
     });
 }
 $(document).on("click", "#updateSignature", function() {
     $("#createSignatureModal").modal('show')
+})
+
+$(document).on("change", '.tool_name', function() {
+    let tool_n = $(this).data("file")
+    $("#filename").val(tool_n);
+})
+
+$(document).on("click", "#append", function(e) {
+    e.preventDefault();
+    if ($(".tool_name").is(":checked")) {
+        console.log($(".tool_name").is(":checked"))
+        $.ajax({
+            url: "inc/saveTool.php",
+            method: "POST",
+            dataType: "json",
+            data: $("#saveToolForms").serialize(),
+            success: function(data) {
+                if (data.success == true) {
+                    $("#selectSignatureModal").modal('hide')
+                    load_session_data();
+                }
+
+            },
+        });
+    } else {
+        errorTime("Please select a resource to append")
+    }
 })
 </script>
