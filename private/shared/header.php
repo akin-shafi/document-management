@@ -1,4 +1,5 @@
-<?php  //require_login() ; ?>
+<?php  //require_login() ; 
+?>
 <?php echo $page_title == 'Edit Document' ? '' : '<Doctype />' ?>
 
 
@@ -15,8 +16,7 @@
     <title><?php echo $page_title ?></title>
     <link rel="apple-touch-icon" href="apple-icon-120.html">
     <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
-    <link href="css/css219a5.css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
-        rel="stylesheet">
+    <link href="css/css219a5.css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo url_for('assets/css/vendors.min.css') ?>">
@@ -40,9 +40,8 @@
 
 
     <?php if ($page == 'Dashboard') { ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo url_for('assets/css/app-email.min.css') ?>">
-    <link rel="stylesheet" type="text/css"
-        href="<?php echo url_for('assets/css/ext-component-sweet-alerts.min.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo url_for('assets/css/app-email.min.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo url_for('assets/css/ext-component-sweet-alerts.min.css') ?>">
     <?php  } ?>
     <!-- END: Page CSS-->
 
@@ -55,13 +54,10 @@
 
 <!-- BEGIN: Body-->
 
-<body class="horizontal-layout horizontal-menu 1-column navbar-floating footer-static  " data-open="hover"
-    data-menu="horizontal-menu" data-col="1-column">
+<body class="horizontal-layout horizontal-menu 1-column navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="1-column">
 
     <!-- BEGIN: Header-->
-    <nav style="height: 70px"
-        class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center"
-        data-nav="brand-center">
+    <nav style="height: 70px" class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center" data-nav="brand-center">
         <div class="navbar-header d-xl-block d-none">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
@@ -77,8 +73,7 @@
             <div class="bookmark-wrapper d-flex align-items-center">
                 <ul class="nav navbar-nav bookmark-icons">
                     <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" href="<?php echo url_for('dashboard/') ?>" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" title="Documents">
+                        <a class="nav-link" href="<?php echo url_for('dashboard/') ?>" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Documents">
                             <i class="ficon" data-feather="mail"></i>
                         </a>
                     </li>
@@ -89,8 +84,7 @@
             <ul class="nav navbar-nav align-items-center ms-auto">
 
                 <li class="nav-item dropdown dropdown-user">
-                    <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Shafi
                                 Akin</span><span class="user-status">active</span></div>
                         <span class="avatar">
@@ -101,8 +95,7 @@
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                         <a class="dropdown-item" href="<?php echo url_for('dashboard/') ?>">
                             <i class="me-50" data-feather="user"></i>
-                            Profile</a><a class="dropdown-item" href="<?php echo url_for('dashboard/') ?>"><i
-                                class="me-50" data-feather="mail"></i> Inbox</a>
+                            Profile</a><a class="dropdown-item" href="<?php echo url_for('dashboard/') ?>"><i class="me-50" data-feather="mail"></i> Inbox</a>
 
 
                         <div class="dropdown-divider"></div>
@@ -128,7 +121,7 @@
     <!-- BEGIN: Content-->
     <div class="app-content content <?php echo $page == 'Dashboard' ? 'email-application' : '' ?>">
         <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
+        <div class="header-navbar shadow-lg"></div>
         <div class="content-wrapper container-xxl p-0">
 
             <div class="content-body">
